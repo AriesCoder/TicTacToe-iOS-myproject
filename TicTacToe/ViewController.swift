@@ -75,11 +75,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func player1Name(_ sender: UITextField) {
         player1Label.text = sender.text
         player1VS.text = sender.text
-    }
+            }
     
     @IBAction func player2Name(_ sender: Any) {
         player2Label.text = player2TF.text
         player2VS.text = player2TF.text
+        
     }
     
     
