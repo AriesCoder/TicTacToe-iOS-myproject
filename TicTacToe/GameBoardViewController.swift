@@ -13,8 +13,7 @@ class GameBoardViewController: UIViewController {
     var player2 = "Player 2"
     var size = 3.0
     var xMove = 1
-    var playerMove = Array<Array<String>>()
-    var mappingTagToCoordinate = [Int: (Int, Int)]()
+    var gameLogic = GameLogic()
     @IBOutlet weak var gameBoardView: UIView!
     @IBOutlet weak var anounceLabel: UILabel!
     @IBOutlet weak var restartBtn: UIButton!
@@ -46,7 +45,7 @@ class GameBoardViewController: UIViewController {
         gameBoardView.layer.shadowOpacity = 1.0
         gameBoardView.layer.masksToBounds = false
         gameBoardView.layer.shouldRasterize = true
-
+        gameLogic.setGameBoard(boardGameSize: Int(size))
         
         let buffer = 3.0
         print("gameboardSize", gameBoardView.frame.width)
@@ -57,7 +56,6 @@ class GameBoardViewController: UIViewController {
         for col in 0..<Int(size) {
             let c = Double(col)
             let y = (btnSide * c) + (buffer * c)
-            var tempArray = Array<String>()
             for r in 0..<Int(size) {
                 let j = Double(r)
                 let x = (btnSide * j) + (buffer * j)
@@ -65,12 +63,10 @@ class GameBoardViewController: UIViewController {
                 print("btnSize", btnSide)
                 let btn = makeBtn(x: x, y: y, side: btnSide)
                 btn.tag = tag
-                mappingTagToCoordinate[tag] = (r, col)
+                gameLogic.setMappingTagToCoordinate(tag: tag, coor: [col, r])
                 tag += 1
                 btn.setTitle("", for: .normal)
-                tempArray.append("nil")
             }
-            playerMove.append(tempArray)
         }
     }
     
@@ -90,20 +86,24 @@ class GameBoardViewController: UIViewController {
     }
     
     @objc func doGameBtn(sender : UIButton) {
+        print("sender move: " + String(sender.tag))
         sender.isEnabled = false
-//        let coor = (mappingTagToCoordinate[sender.tag][0], mappingTagToCoordinate[sender.tag][1])
         if xMove > 0 {
             sender.setTitle("X", for: .normal)
             sender.setTitleColor(.blue, for: .normal)
             sender.titleLabel?.font = UIFont.systemFont(ofSize: 35, weight: .bold)
             anounceLabel.text = "\(player2)'s turn!"
-//            playerMove[coor[0], coor[1]] = "X"
+            if gameLogic.playerMove(player: "X", tag: sender.tag) {
+                print("X win")
+            }
         } else {
             sender.setTitle("O", for: .normal)
             sender.setTitleColor(.red, for: .normal)
             sender.titleLabel?.font = UIFont.systemFont(ofSize: 35, weight: .bold)
             anounceLabel.text = "\(player1)'s turn!"
-//            playerMove[coor[0], coor[1]] = "X"
+            if gameLogic.playerMove(player: "O", tag: sender.tag) {
+                print("O win")
+            }
         }
         xMove *= -1
     }

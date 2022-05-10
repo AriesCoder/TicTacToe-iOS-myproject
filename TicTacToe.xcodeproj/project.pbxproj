@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A13C50AF282A2D62005DFCD9 /* CoorLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13C50AE282A2D62005DFCD9 /* CoorLogic.swift */; };
 		A186F812281A43C900E274CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A186F811281A43C900E274CA /* AppDelegate.swift */; };
 		A186F814281A43C900E274CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A186F813281A43C900E274CA /* SceneDelegate.swift */; };
 		A186F816281A43C900E274CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A186F815281A43C900E274CA /* ViewController.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A13C50AE282A2D62005DFCD9 /* CoorLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoorLogic.swift; sourceTree = "<group>"; };
 		A186F80E281A43C900E274CA /* TicTacToe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacToe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A186F811281A43C900E274CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A186F813281A43C900E274CA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				A186F81C281A43CA00E274CA /* LaunchScreen.storyboard */,
 				A186F81F281A43CA00E274CA /* Info.plist */,
 				A186F841281A507F00E274CA /* GameBoardViewController.swift */,
+				A13C50AE282A2D62005DFCD9 /* CoorLogic.swift */,
 			);
 			path = TicTacToe;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				A186F816281A43C900E274CA /* ViewController.swift in Sources */,
 				A186F842281A507F00E274CA /* GameBoardViewController.swift in Sources */,
 				A186F812281A43C900E274CA /* AppDelegate.swift in Sources */,
+				A13C50AF282A2D62005DFCD9 /* CoorLogic.swift in Sources */,
 				A186F814281A43C900E274CA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
