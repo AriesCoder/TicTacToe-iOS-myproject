@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import RealmSwift
 
 class GameBoardViewController: UIViewController {
     
+    var players: Results<Player>?
     var player1 = "Player 1"
     var player2 = "Player 2"
     var size = 3.0
@@ -21,12 +23,11 @@ class GameBoardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        anounceLabel.text = "\(player1)'s turn!"
         view.addSubview(gameBoardView)
         createGameBoardUI()
         buttonUI()
     }
-    
+    //MARK: - UI setting
     func buttonUI(){
         restartBtn.layer.cornerRadius = 10
         restartBtn.layer.borderColor = UIColor.white.cgColor
@@ -46,6 +47,8 @@ class GameBoardViewController: UIViewController {
         gameBoardView.layer.masksToBounds = false
         gameBoardView.layer.shouldRasterize = true
         gameLogic.setGameBoard(boardGameSize: Int(size))
+        
+        anounceLabel.text = "\(player1)'s turn!"
         
         let buffer = 3.0
         print("gameboardSize", gameBoardView.frame.width)
@@ -85,6 +88,7 @@ class GameBoardViewController: UIViewController {
         return btn
     }
     
+    //MARK: - game moves
     @objc func doGameBtn(sender : UIButton) {
         print("sender move: " + String(sender.tag))
         sender.isEnabled = false
@@ -94,6 +98,7 @@ class GameBoardViewController: UIViewController {
             sender.titleLabel?.font = UIFont.systemFont(ofSize: 35, weight: .bold)
             anounceLabel.text = "\(player2)'s turn!"
             if gameLogic.playerMove(player: "X", tag: sender.tag) {
+                anounceLabel.text = "\(player1) win"
                 print("X win")
             }
         } else {
@@ -102,10 +107,18 @@ class GameBoardViewController: UIViewController {
             sender.titleLabel?.font = UIFont.systemFont(ofSize: 35, weight: .bold)
             anounceLabel.text = "\(player1)'s turn!"
             if gameLogic.playerMove(player: "O", tag: sender.tag) {
+                anounceLabel.text = "\(player2) win"
                 print("O win")
             }
         }
         xMove *= -1
     }
+    //MARK: - restarting game
 
+    @IBAction func restartBtnPressed(_ sender: Any) {
+        gameLogic.reset()
+        createGameBoardUI()
+        xMove = 1
+    }
+    
 }

@@ -25,6 +25,11 @@ class GameLogic {
         print(gameBoard)
     }
     
+    func reset() {
+        gameBoard = [[String]]()
+        mappingTagToCoordinate = [Int: [Int]]()
+    }
+    
     func setMappingTagToCoordinate(tag: Int, coor: [Int]) {
         mappingTagToCoordinate[tag] = coor
     }

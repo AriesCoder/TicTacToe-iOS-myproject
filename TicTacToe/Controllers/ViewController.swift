@@ -23,11 +23,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var sizeInInt = 3
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        player1TF.delegate = self
+        player2TF.delegate = self
+        sizeTF.delegate = self
         titleSetting()
         uiSetting()
 
     }
+    
+//MARK: - UI setting
     
     func uiSetting(){
         player1TF.layer.borderColor = UIColor.white.cgColor
@@ -70,7 +74,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
            charIndex += 1
        }
     }
-    
 
     @IBAction func player1Name(_ sender: UITextField) {
         player1Label.text = sender.text
@@ -80,9 +83,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func player2Name(_ sender: Any) {
         player2Label.text = player2TF.text
         player2VS.text = player2TF.text
-        
     }
-    
     
     @IBAction func gameSize(_ sender: Any) {
         guard let size = sizeTF.text else {return}
@@ -93,7 +94,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
             sizeLabel.text = "3 x 3"
             sizeInInt = 3
         }
-        
     }
     
     @IBAction func startBtn(_ sender: Any) {
@@ -103,6 +103,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     }
     
+    //MARK: - segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segToGame"{
             if let gameboard = segue.destination as? GameBoardViewController{
@@ -112,6 +113,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 
             }
         }
+    }
+    
+    //MARK: - TextField Delegate methods
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    //set maximmum text in textfield
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let maxLength = 8
+        let currentString = (textField.text ?? "") as NSString
+        let newString = currentString.replacingCharacters(in: range, with: string)
+
+        return newString.count <= maxLength
     }
     
     
