@@ -107,8 +107,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segToGame"{
             if let gameboard = segue.destination as? GameBoardViewController{
-                gameboard.player1 = player1Label.text ?? "player 1"
-                gameboard.player2 = player2Label.text ?? "player 2"
+                gameboard.player1.name = player1Label.text ?? "player 1"
+                gameboard.player2.name = player2Label.text ?? "player 2"
                 gameboard.size = Double(sizeInInt)
                 
             }

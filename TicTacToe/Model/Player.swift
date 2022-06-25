@@ -8,8 +8,9 @@
 import Foundation
 import RealmSwift
 
-class Player: Object {
+class Player: Object{
     
     @Persisted var name: String = ""
-    @Persisted var totalScore: Int = 0
+    @Persisted var score: Int = 0
+    @Persisted var dateCreated = Date()
 }

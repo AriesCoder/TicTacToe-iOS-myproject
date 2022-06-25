@@ -20,10 +20,9 @@
 		A186F833281A43CA00E274CA /* TicTacToeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A186F832281A43CA00E274CA /* TicTacToeUITests.swift */; };
 		A186F835281A43CA00E274CA /* TicTacToeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A186F834281A43CA00E274CA /* TicTacToeUITestsLaunchTests.swift */; };
 		A186F842281A507F00E274CA /* GameBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A186F841281A507F00E274CA /* GameBoardViewController.swift */; };
-		A186F90328231BC000E274CA /* vs2.png in Resources */ = {isa = PBXBuildFile; fileRef = A186F90228231BC000E274CA /* vs2.png */; };
-		A186F9082823217600E274CA /* vs.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A186F9072823217600E274CA /* vs.jpeg */; };
 		A18A1CB0285AB6DA00CD1D33 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18A1CAF285AB6DA00CD1D33 /* Player.swift */; };
 		A18A1CB2285ABE0900CD1D33 /* ResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18A1CB1285ABE0900CD1D33 /* ResultTableViewController.swift */; };
+		A195D0102862886C00AB4278 /* vs.png in Resources */ = {isa = PBXBuildFile; fileRef = A195D00F2862886C00AB4278 /* vs.png */; };
 		E244F8B54C83A8FC52BE84A7 /* Pods_TicTacToe_TicTacToeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E2199D793317022260BDAE3 /* Pods_TicTacToe_TicTacToeUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,10 +66,9 @@
 		A186F832281A43CA00E274CA /* TicTacToeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeUITests.swift; sourceTree = "<group>"; };
 		A186F834281A43CA00E274CA /* TicTacToeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A186F841281A507F00E274CA /* GameBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardViewController.swift; sourceTree = "<group>"; };
-		A186F90228231BC000E274CA /* vs2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vs2.png; sourceTree = SOURCE_ROOT; };
-		A186F9072823217600E274CA /* vs.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = vs.jpeg; path = ../../../../.Trash/vs.jpeg; sourceTree = "<group>"; };
 		A18A1CAF285AB6DA00CD1D33 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		A18A1CB1285ABE0900CD1D33 /* ResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewController.swift; sourceTree = "<group>"; };
+		A195D00F2862886C00AB4278 /* vs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vs.png; sourceTree = SOURCE_ROOT; };
 		CB2C8B712FEDC37ABFEA7879 /* Pods-TicTacToeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TicTacToeTests.debug.xcconfig"; path = "Target Support Files/Pods-TicTacToeTests/Pods-TicTacToeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F996BC61CC65D695B1B87C43 /* Pods_TicTacToeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TicTacToeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -130,7 +128,6 @@
 			isa = PBXGroup;
 			children = (
 				A186F810281A43C900E274CA /* TicTacToe */,
-				A186F90228231BC000E274CA /* vs2.png */,
 				A186F827281A43CA00E274CA /* TicTacToeTests */,
 				A186F831281A43CA00E274CA /* TicTacToeUITests */,
 				A186F80F281A43C900E274CA /* Products */,
@@ -152,13 +149,13 @@
 		A186F810281A43C900E274CA /* TicTacToe */ = {
 			isa = PBXGroup;
 			children = (
-				A186F9072823217600E274CA /* vs.jpeg */,
 				A186F811281A43C900E274CA /* AppDelegate.swift */,
 				A186F813281A43C900E274CA /* SceneDelegate.swift */,
 				A18A1CAE285A9C0700CD1D33 /* Model */,
 				A18A1CAD285A9BCD00CD1D33 /* Views */,
 				A18A1CAC285A9BC100CD1D33 /* Controllers */,
 				A186F81A281A43CA00E274CA /* Assets.xcassets */,
+				A195D00F2862886C00AB4278 /* vs.png */,
 				A186F81F281A43CA00E274CA /* Info.plist */,
 			);
 			path = TicTacToe;
@@ -318,9 +315,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A186F9082823217600E274CA /* vs.jpeg in Resources */,
 				A186F81E281A43CA00E274CA /* LaunchScreen.storyboard in Resources */,
 				A186F81B281A43CA00E274CA /* Assets.xcassets in Resources */,
+				A195D0102862886C00AB4278 /* vs.png in Resources */,
 				A186F819281A43C900E274CA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,7 +333,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A186F90328231BC000E274CA /* vs2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
